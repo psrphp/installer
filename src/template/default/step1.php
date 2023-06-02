@@ -37,7 +37,7 @@
                         return '<pre class="hljs"><code>' + window.markdownit().utils.escapeHtml(str) + '</code></pre>';
                     }
                 });
-                $("#LICENSE").html(md.render(base64Decode("{:base64_encode(file_exists($root.'/config/psrphp/installer/LICENSE')?file_get_contents($root.'/config/psrphp/installer/LICENSE'):'__暂无介绍__')}")));
+                $("#LICENSE").html(md.render(base64Decode("{:base64_encode(file_exists($root.'/config/psrphp/installer/LICENSE')?file_get_contents($root.'/config/psrphp/installer/LICENSE'):'_暂无介绍_')}")));
                 $("#LICENSE a").attr("target", "_blank");
                 $("#LICENSE table").addClass("table table-bordered table-striped my-3");
             </script>

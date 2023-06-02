@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Psrphp\Installer\Http;
 
+use App\Psrphp\Admin\Lib\Response;
 use App\Psrphp\Admin\Traits\RestfulTrait;
 use Composer\Autoload\ClassLoader;
 use PsrPHP\Request\Request;
@@ -97,7 +98,7 @@ str;
             }
             file_put_contents($root . '/config/psrphp/installer/disabled.lock', date('Y-m-d H:i:s'));
         } catch (Throwable $th) {
-            return $this->error('发生错误：' . $th->getMessage());
+            return Response::error('发生错误：' . $th->getMessage());
         }
 
         return $template->renderFromFile('success@psrphp/installer', [

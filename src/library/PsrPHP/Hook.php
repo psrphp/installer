@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Psrphp\Installer;
+namespace App\Psrphp\Installer\PsrPHP;
 
 use App\Psrphp\Installer\Middleware\JumpInstaller;
 use PsrPHP\Framework\Route;
 use PsrPHP\Psr15\RequestHandler;
 
-class App
+class Hook
 {
     public static function onStart(
         RequestHandler $requestHandler,

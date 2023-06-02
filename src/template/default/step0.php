@@ -37,7 +37,7 @@
                         return '<pre class="hljs"><code>' + window.markdownit().utils.escapeHtml(str) + '</code></pre>';
                     }
                 });
-                $("#readme").html(md.render(base64Decode("{:base64_encode(file_exists($root.'/config/psrphp/installer/README.md')?file_get_contents($root.'/config/psrphp/installer/README.md'):'__暂无介绍__')}")));
+                $("#readme").html(md.render(base64Decode("{:base64_encode(file_exists($root.'/config/psrphp/installer/README.md')?file_get_contents($root.'/config/psrphp/installer/README.md'):'_暂无介绍_')}")));
                 $("#readme a").attr("target", "_blank");
                 $("#readme table").addClass("table table-bordered table-striped my-3");
             </script>
