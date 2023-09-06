@@ -5,25 +5,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>系统安装</title>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
-    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 10px;
+            line-height: 1.4;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <style>
-        html {
-            background: radial-gradient(at center top, #707070, #000000) repeat center fixed;
-            height: 100%;
-        }
-
-        body {
-            padding: 0px;
-            margin: 0;
-            background: none;
-        }
-    </style>
-    <div class="shadow-lg border rounded-lg p-4 bg-white" style="margin: 50px auto;max-width: 1000px;">
-        <div class="mb-4 pb-4 border-bottom">
-            <div class="h1 text-primary">系统安装/setup</div>
-        </div>
+    <h1>系统安装/setup</h1>
+    <div style="display: flex;gap: 10px;">
+        <?php
+        $step = $_GET['step'] ?? 0;
+        $per = ($step + 1) * 20;
+        $steps = ['系统简介', '协议条款', '环境检测', '初始设置', '安装完成'];
+        ?>
+        {foreach $steps as $k=>$v}
+        {if $step > $k}
+        <div style="color: gray;">{$v}</div>
+        {elseif $step == $k}
+        <div style="color: red;">{$v}</div>
+        {else}
+        <div style="color: gray;">{$v}</div>
+        {/if}
+        {/foreach}
+    </div>
